@@ -5,10 +5,10 @@ export default [
     },
     {
      "_id": "234", "topic": "Traffic", "username": "The Boring Company", "handle": "@boringcompany", "time": "2h",
-     "image": "boring2.jpg", "liked": true, "likes": 2345, "replies": 321, "retuits": 432, "title": "The Boring Company fixing traffic", "tuit": "The Boring Company (TBC) is an American infrastructure and tunnel construction services company founded by Elon Musk. Its ongoing and proposed projects are designed for intra-city ('loop') transit systems."
+     "image": "B.png", "liked": true, "likes": 2345, "replies": 321, "retuits": 432, "title": "The Boring Company fixing traffic", "tuit": "The Boring Company (TBC) is an American infrastructure and tunnel construction services company founded by Elon Musk. Its ongoing and proposed projects are designed for intra-city ('loop') transit systems."
     },
     {
-     "_id": "345", "topic": "Brain Injuries", "username": "Neurolink", "handle": "@neurolink", "time": "3h", "image": "neurolink.jpg", "title": "Neurolink fixes paralisis and blindness", "tuit": "Neurolink is an American company founded by Elon Musk that specializes in brain to computer integration. The first application will be to cure spinal cord injuries so that paraplegics can walk again. Other applications include curing blindness and mental disorders.", "liked": true, "likes": 3456, "replies": 345, "retuits": 654
+     "_id": "345", "topic": "Brain Injuries", "username": "Neurolink", "handle": "@neurolink", "time": "3h", "image": "C.png", "title": "Neurolink fixes paralisis and blindness", "tuit": "Neurolink is an American company founded by Elon Musk that specializes in brain to computer integration. The first application will be to cure spinal cord injuries so that paraplegics can walk again. Other applications include curing blindness and mental disorders.", "liked": true, "likes": 3456, "replies": 345, "retuits": 654
     },
 ];
     
