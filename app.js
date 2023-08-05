@@ -13,32 +13,36 @@ app.set("trust proxy", 1)
 app.use(
     cors({
       credentials: true,
-      origin: [process.env.FRONTEND_URL, "https://a5--snazzy-crostata-4443b7.netlify.app/"]
+      origin: [process.env.FRONTEND_URL, "https://a5--snazzy-crostata-4443b7.netlify.app"]
     })
 )
-const sessionOptions = {
-    secret: "any string",
-    resave: false,
-    saveUninitialized: false,
-}
-if (process.env.NODE_ENV !== "development") {
-    sessionOptions.proxy = true;
-    sessionOptions.cookie = {
+
+app.use(
+    session({
+        secret: "any string",
+        resave: false,
+        proxy: true,
+        saveUninitialized: true,
+        cookie: {
         sameSite: "none",
         secure: true,
-    }
-}
-app.use(session(sessionOptions))
+        },
+    })
+);
   
 app.use(
-    session(sessionOptions)
-)
+session({
+    secret: "your-secret-key",
+    resave: false,
+    saveUninitialized: false,
+    store: new session.MemoryStore(),
+})
+);
+  
+app.use(express.json());
 
-app.use(express.json())
-
-TuitsController(app)
-HelloController(app)
-UserController(app)
-AuthController(app)
-
-app.listen(process.env.PORT || 4000)    
+TuitsController(app);
+HelloController(app);
+UserController(app);
+AuthController(app);
+app.listen(process.env.PORT || 4000);
