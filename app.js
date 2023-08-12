@@ -17,7 +17,7 @@ app.set("trust proxy", 1)
 app.use(
     cors({
       credentials: true,
-      origin: ["http://localhost:3000", "https://a5--snazzy-crostata-4443b7.netlify.app"]
+      origin: ["http://localhost:3000", "https://a6--inquisitive-bublanina-343ac7.netlify.app/"]
     })
 )
 
