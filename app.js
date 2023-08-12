@@ -6,6 +6,10 @@ import HelloController from "./controllers/hello-controller.js"
 import UserController from "./users/users-controller.js"
 import TuitsController from "./controllers/tuits/tuits-controller.js"
 import AuthController from "./users/auth-controller.js"
+import mongoose from "mongoose"
+
+const CONNECTION_STRING = process.env.DB_CONNECTION_STRING || 'mongodb://127.0.0.1:27017/tuiter';
+mongoose.connect(CONNECTION_STRING)
 
 const app = express()
 app.set("trust proxy", 1)
@@ -13,7 +17,7 @@ app.set("trust proxy", 1)
 app.use(
     cors({
       credentials: true,
-      origin: [process.env.FRONTEND_URL, "https://a5--snazzy-crostata-4443b7.netlify.app"]
+      origin: ["http://localhost:3000", "https://a5--snazzy-crostata-4443b7.netlify.app"]
     })
 )
 
@@ -24,19 +28,19 @@ app.use(
         proxy: true,
         saveUninitialized: true,
         cookie: {
-        sameSite: "none",
-        secure: true,
+            sameSite: "none",
+            secure: true,
         },
     })
 );
   
 app.use(
-session({
-    secret: "your-secret-key",
-    resave: false,
-    saveUninitialized: false,
-    store: new session.MemoryStore(),
-})
+    session({
+        secret: "your-secret-key",
+        resave: false,
+        saveUninitialized: false,
+        store: new session.MemoryStore(),
+    })
 );
   
 app.use(express.json());

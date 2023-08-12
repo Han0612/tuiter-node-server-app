@@ -1,6 +1,5 @@
-import * as usersDao from "./users-dao.js"
-
-var currentUserVar
+import * as usersDao from "./users-dao.js";
+var currentUserVar;
 const AuthController = (app) => {
   // const register = async (req, res) => {
   //   const username = req.body.username;
@@ -84,6 +83,5 @@ const AuthController = (app) => {
   app.post("/api/users/profile", profile);
   app.post("/api/users/logout", logout);
   app.put("/api/users/:uid", update);
-}
-
-export default AuthController
+};
+export default AuthController;
